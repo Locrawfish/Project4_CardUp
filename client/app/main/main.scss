@@ -1,34 +1,111 @@
-.thing-form {
-    margin: 20px 0;
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,700);
+body {
+  padding: 50px;
+  font: 14px 'Josefin Slab', serif;
 }
 
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
+.title h1{
+  text-align: center;
 }
 
-#banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+/*NAVIGATION*/
+#wrapper{
+  background-color:black;
+  padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  height: 100%;
+  z-index: 1000;
+  position: fixed;
+  margin-left: -50px;
+  margin-top: -50px;
+  overflow-y: auto;
 }
 
-.hero-unit {
-    position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+#sidebar-brand {
+  font-size: 4em;
 }
 
-.footer {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 70px;
-    border-top: 1px solid #E5E5E5;
+.sidebar-wrapper{
+  padding-left: 10px;
+  margin-left: 0;
+  height: 100%;
 }
 
-.navbar-text {
-  margin-left: 15px;
+.sidebar-wrapper li{
+  list-style: none;
+  font-size: 1.5em;
+  padding-top: 20px;
+  font-size: 1.8em;
+  padding-top: 25px;
+  color:#70DBDB;
 }
+
+.sidebar-wrapper li a{
+  color:white;
+}
+
+.sidebar-wrapper li a:hover{
+  text-decoration: none;
+  color: #0099CC;
+  color: #70DBDB;
+  -webkit-animation-name: slidein; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    animation-name: slidein;
+    animation-duration: 1s;
+
+}
+@keyframes slidein {
+   0% { margin-left:  0; }
+  50% { margin-left:  5px; }
+  /*75% { margin-left:  10px; }*/
+  100% { margin-left:  0px; }
+}
+
+.sidebar-wrapper li a:active{
+  color:#70DBDB;
+}
+
+.sidebar-wrapper li a:active{
+  color:#70DBDB;
+  list-style: none;
+  margin-left: 75px;
+}
+
+// SCAFFOLED SCSS
+// .thing-form {
+//     margin: 20px 0;
+// }
+
+// #banner {
+//     border-bottom: none;
+//     margin-top: -20px;
+// }
+
+// #banner h1 {
+//     font-size: 60px;
+//     line-height: 1;
+//     letter-spacing: -1px;
+// }
+
+// .hero-unit {
+//     position: relative;
+//     padding: 30px 15px;
+//     color: #F5F5F5;
+//     text-align: center;
+//     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+//     background: #4393B9;
+// }
+
+// .footer {
+//     text-align: center;
+//     padding: 30px 0;
+//     margin-top: 70px;
+//     border-top: 1px solid #E5E5E5;
+// }
+
+// .navbar-text {
+//   margin-left: 15px;
+// }
