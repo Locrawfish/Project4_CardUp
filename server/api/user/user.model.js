@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
-var authTypes = ['github', 'twitter', 'facebook', 'google'];
+var authTypes = ['twitter'];
 
 var UserSchema = new Schema({
   name: String,
@@ -16,8 +16,21 @@ var UserSchema = new Schema({
   provider: String,
   salt: String,
   twitter: {},
+  google: {},
   github: {}
 });
+
+// var UserSchema = new Schema({
+//   firstName: String,
+//   lastName: String,
+//   email: { type: String, lowercase: true },
+//   password: String
+
+//   linkedin: {
+//     email: { type: String, lowercase: true },
+//     password: String
+//   }
+// });
 
 /**
  * Virtuals
