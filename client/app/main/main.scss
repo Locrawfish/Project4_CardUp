@@ -1,11 +1,49 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,700);
+html, body {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   padding: 50px;
   font: 14px 'Josefin Slab', serif;
+  background-image: url('../assets/images/light-man-hand-pen.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: screen;
+  background-color: rgb(100,100,100);
 }
 
 .title h1{
+  margin-left:33%;
+  font-size: 75px;
+}
+
+#slogan{
+  margin-left:20%;
+  color: black;
+  // background-color: white;
+}
+
+#title_points h2{
+  color:#70DBDB;
   text-align: center;
+  font-size: 3.2em;
+}
+
+.box-shadow{
+ box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .08), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+}
+
+#title_sections{
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 5px;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: -5%;
+    min-height: 200px;
+    padding: 10px;
+    color: #4d4d4d;
 }
 
 /*NAVIGATION*/
@@ -72,6 +110,17 @@ body {
   text-decoration: none;
 }
 
+//FOOTER
+.footer {
+    padding: 30px 0;
+    margin-top: 70px;
+    border-top: 1px solid #E5E5E5;
+    color:black;
+}
+ #footer{
+    margin-left: 30%
+ }
+
 // SCAFFOLED SCSS
 // .thing-form {
 //     margin: 20px 0;
@@ -95,13 +144,6 @@ body {
 //     text-align: center;
 //     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 //     background: #4393B9;
-// }
-
-// .footer {
-//     text-align: center;
-//     padding: 30px 0;
-//     margin-top: 70px;
-//     border-top: 1px solid #E5E5E5;
 // }
 
 // .navbar-text {
