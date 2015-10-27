@@ -1,6 +1,11 @@
 'use strict';
 
-angular.module('cardUpApp')
-  .controller('CardCtrl', function ($scope) {
-    $scope.message = 'Hello';
+var myApp = angular.module('cardUpApp')
+  .controller('CardCtrl', function() {
+
+    // var cardFactory.create = function() {
+    //   return $http.post('api/cards', )
+    // }
+
   });
+

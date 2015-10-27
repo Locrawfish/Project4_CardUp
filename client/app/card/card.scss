@@ -1,0 +1,31 @@
+
+h3 input {
+  border: none;
+}
+
+.container {
+  margin-left: 15%;
+  text-align: left;
+}
+
+.container-fluid {
+  margin-left: 15%;
+}
+
+.container input {
+  text-align: left;
+  border-bottom: solid black 1px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  width: 250px;
+  align: right;
+  padding-top: 3px;
+}
+
+.container form {
+  width: 300px;
+  border: solid black 3px;
+  padding: 10px;
+  padding-bottom: 20px;
+}

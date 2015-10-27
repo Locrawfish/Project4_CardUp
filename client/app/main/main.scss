@@ -4,6 +4,14 @@ body {
   font: 14px 'Josefin Slab', serif;
 }
 
+h1 {
+  margin-left: 50%;
+}
+
+.footer {
+  margin-left: 7%;
+}
+
 .title h1{
   text-align: center;
 }
@@ -41,6 +49,7 @@ body {
   font-size: 1.8em;
   padding-top: 25px;
   color:#70DBDB;
+  margin-right: 3px;
 }
 
 .sidebar-wrapper li a{
