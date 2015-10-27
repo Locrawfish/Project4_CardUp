@@ -20,6 +20,7 @@ var authenticate = function(req, res, next) {
 module.exports = function(app) {
 
   // Insert routes below
+  app.use('/api/cards', require('./api/card'));
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
 
@@ -43,7 +44,7 @@ router.get('/', authenticate, function(req, res, next) {
 
 
 // ---------------- NEW | CARDS
-router.get('/new', authenticate, function(req, res, next) {
+router.get('card/new', authenticate, function(req, res, next) {
   var card = {
     name: '',
     title: '',

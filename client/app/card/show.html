@@ -1,0 +1,36 @@
+
+<div ng-controller="CardShowController as ctrl">
+<section class="container-fluid item">
+  <div class="row">
+    <h2 class="text-left">Name: {{ ctrl.card.name }}</h2>
+    <div class="col-lg-10 col-md-offset-2">
+      <dl class="dl-horizontal">
+        <dt>Title:</dt>
+        <dd>{{ ctrl.card.title }}</dd>
+        <dt>Company:</dt>
+        <dd>{{ ctrl.card.company }}</dd>
+        <dt>Mobile:</dt>
+        <dd>{{ ctrl.card.phone.mobile }}</dd>
+        <dt>Work:</dt>
+        <dd>{{ ctrl.card.phone.work }}</dd>
+        <dt>LinkedIn:</dt>
+        <dd>{{ ctrl.card.linkedin }}</dd>
+        <dt>Site:</dt>
+        <dd>{{ ctrl.card.site }}</dd>
+      </dl>
+
+      <div class="back">
+        <button type="button"
+                class="btn btn-primary"
+                onclick="window.history.back()">Back</button>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="col-md-4 card-image">
+      <img class="middle" width=200px src="/assets/images/inventory/loren.jpg"/>
+    </div>
+  </div>
+</section>
+</div>

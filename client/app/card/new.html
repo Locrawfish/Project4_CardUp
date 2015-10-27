@@ -1,0 +1,20 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+
+<div class="container">
+<div ng-controller="CardNewController as ctrl">
+  <form novalidate class="simple-form">
+    <h3>
+    <input type="text" placeholder="name" ng-model="card.name" /><br />
+    </h3>
+    <input type="text" placeholder="title" ng-model="card.title" /><br />
+    <input type="text" placeholder="company" ng-model="card.company" /><br />
+    <input type="text" placeholder="mobile" ng-model="card.phone.cell" /><br />
+    <input type="text" placeholder="work" ng-model="card.phone.work" /><br />
+    <input type="text" placeholder="email" ng-model="card.email" /><br />
+    <input type="text" placeholder="linkedin" ng-model="card.linkedin" /><br />
+    <input type="text" placeholder="site" ng-model="card.site" /><br />
+    <button type="submit">Save</button>
+</form>
+</div>

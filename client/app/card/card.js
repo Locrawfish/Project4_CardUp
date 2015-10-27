@@ -3,9 +3,27 @@
 angular.module('cardUpApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('card', {
-        url: '/card',
+      .state('cards', {
+        url: '/cards',
         templateUrl: 'app/card/card.html',
-        controller: 'CardCtrl'
+        controller: 'CardIndexController',
+        controllerAs: 'ctrl'
+      })
+      .state('cardDetail', {
+        url: '/cards/:id',
+        templateUrl: 'app/card/show.html',
+        controller: 'CardShowController',
+        controllerAs: 'ctrl'
+      })
+      .state('cardNew', {
+        url: '/cards/new',
+        templateUrl: 'app/card/new.html',
+        controller: 'CardNewController',
+        controllerAs: 'ctrl'
       });
   });
+
+
+
+
+
