@@ -19,4 +19,12 @@ angular.module('cardUpApp')
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
     };
+
+    $scope.hoverIn = function(){
+    this.hoverEdit = true;
+    };
+
+    $scope.hoverOut = function(){
+    this.hoverEdit = false;
+    };
   });
