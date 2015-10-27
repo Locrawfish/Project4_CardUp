@@ -1,9 +1,5 @@
-<html>
-
 
 <div ng-include="'components/navbar/navbar.html'"></div>
-
-
 <section class="container-fluid main">
   <div class="row">
     <article class="search">
@@ -17,7 +13,7 @@
 
 <div class="list-group">
   <div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animate-inventory" ng-repeat="card in filteredCards = ( ctrl.inventory | inventory : ctrl.searchText | orderBy: 'name' )">
+    <div class="col-lg-1 col-md-2 col-sm-4 col-xs-10 animate-inventory" ng-repeat="card in filteredCards = ( ctrl.inventory | inventory : ctrl.searchText | orderBy: 'name' )">
     <a ng-click="ctrl.goCard(card)" class="list-group-item">
       <h3>{{ card.name }}</h3>
       <article class="row">
