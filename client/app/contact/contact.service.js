@@ -1,29 +1,32 @@
 (function() {
   'use strict';
-
   // item === card
   // cart === contact
 
   angular.module('cardUpApp')
-  .service('ContactService', function() {
+  .service('ContactService', function(Auth, $http) {
 
+    var myUser = Auth.getCurrentUser();
     var that = this;
 
-    that.contact = [];
+    // that.contact = [];
 
-    function findItemById(cards, name) {
-      return _.find(cards, function(card) {
-        return card.name === name;
+     that.findItemById = function(card) {
+      return _.find(that.cards, function(card) {
+        console.log(card);
+        return card.id === (itemId);
       });
-    }
+    };
 
     that.addCard = function(card) {
-      var found = findItemById(that.contact, card.name);
+      console.log(card);
+      console.log(myUser);
+      var found = that.findItemById(card);
       if (found) {
         found.name += card.name;
       }
       else {
-        that.contact.push(angular.copy(card));
+        myUser.cards.push(card._id);
       }
     };
 
