@@ -10,10 +10,10 @@
 
     var that = this;
 
-    that.findItemById = function(id) {
-      var cardId = parseInt(id);
+    that.findItemById = function(name) {
+      var cardName = parseInt(name);
       return_.find(that.inventory, function(card) {
-        return card.id === cardId;
+        return card.name === cardName;
       });
     };
 

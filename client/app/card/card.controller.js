@@ -1,11 +1,33 @@
+(function() {
 'use strict';
 
-var myApp = angular.module('cardUpApp')
-  .controller('CardCtrl', function() {
+angular
+  .module('cardUpApp')
+  .controller('CardIndexController', CardIndexController);
 
-    // var cardFactory.create = function() {
-    //   return $http.post('api/cards', )
-    // }
+  /** @ngInject */
+  function CardIndexController(CardService, $state, ContactService) {
 
-  });
+    var that = this;
+    // that.cards = ContactService.inventory;
 
+    that.inventory = CardService.inventory;
+
+    that.goCard = function (card) {
+      $state.go( 'cardDetail', { cardName : card.name });
+    };
+
+    that.searchText = '';
+    that.contact = ContactService.contact;
+
+    that.addCard = function(card) {
+      ContactService.addCard(card);
+    };
+
+    that.removeCard = function(card) {
+      ContactService.removeCard(card);
+    };
+
+  }
+
+})();

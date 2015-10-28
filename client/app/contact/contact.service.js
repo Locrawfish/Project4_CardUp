@@ -9,18 +9,18 @@
 
     var that = this;
 
-    that.card = [];
+    that.contact = [];
 
-    function findItemById(cards, id) {
+    function findItemById(cards, name) {
       return _.find(cards, function(card) {
-        return card.id === id;
+        return card.name === name;
       });
     }
 
     that.addCard = function(card) {
-      var found = findItemById(that.contact, card.id);
+      var found = findItemById(that.contact, card.name);
       if (found) {
-        found.qty += card.qty;
+        found.name += card.name;
       }
       else {
         that.contact.push(angular.copy(card));
