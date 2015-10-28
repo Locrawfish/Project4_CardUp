@@ -54,7 +54,7 @@
     <article class="col-sm-3">
       <h2>Your Contacts:</h2>
       <ul>
-        <li class="cart animate-cart" ng-repeat="card in ctrl.cart">
+        <li class="cart animate-cart" ng-repeat="card in ctrl">
           <span>{{ card.name + <br> + card.title <br> + card.company }}</span>
           <button class="btn btn-danger btn-xs" ng-click="ctrl.removeItem(card)">Remove Contact</button>
         </li>
