@@ -25,9 +25,7 @@ angular
     that.addCard = function(card) {
       // REMOVE THIS WITH REAL DATA, THIS IS A BAD IDEA
       delete card._id;
-      // I REPEAT, THIS IS A BAD IDEA ^^^^^^^^^^
-      user.cards.push(card);
-      ContactService.addCard(user);
+      ContactService.addCard(card);
     };
 
     that.removeCard = function(card) {

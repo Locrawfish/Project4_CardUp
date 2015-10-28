@@ -18,9 +18,8 @@
       });
     };
 
-    that.addCard = function(user) {
-
-      $http.put('/api/users/' + user._id, user);
+    that.addCard = function(card) {
+      $http.post('/api/users/contacts', card);
     };
 
     that.removeCard = function(card, user) {

@@ -41,6 +41,18 @@
       linkedin: 'linked.com/loren',
       site: 'www.hey.com',
       imageFile: 'loren.jpg'
+    },
+    {
+      _id: 3,
+      name: 'Spongebob',
+      title: 'Squarepants',
+      company: 'Krusty',
+      cell: 7891234569,
+      work: 1234567890,
+      email: 'Spongebob@test.com',
+      linkedin: 'linked.com/Spongebob',
+      site: 'www.Squarepants.com',
+      imageFile: 'addison.jpg'
     }
   ];
  }

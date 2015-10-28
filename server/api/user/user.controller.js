@@ -5,6 +5,7 @@ var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
 var _ = require('lodash');
+var Card = require('../card/card.model');
 
 var validationError = function(res, err) {
   return res.status(422).json(err);
@@ -116,6 +117,28 @@ exports.me = function(req, res, next) {
 exports.authCallback = function(req, res, next) {
   res.redirect('/');
 };
+
+exports.addContact = function(req, res, next) {
+  var userId = req.user._id;
+  var cardData = req.body;
+  User.findById(userId, function (err, user) {
+    if (err) { return handleError(res, err); }
+    if(!user) { return res.status(404).send('Not Found'); }
+
+    var card = new Card(cardData)
+    user.cards.push(card);
+
+    // if not embedded
+    // Card.findById(cardId, function(err, card) {
+    //   user.cards.push(card);
+    // });
+
+    user.save(function(err) {
+      if (err) { return handleError(res, err); }
+      return res.status(201).json(card);
+    });
+  });
+}
 
 
 function handleError(res, err) {
