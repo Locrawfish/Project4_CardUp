@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
 var authTypes = ['twitter'];
+var Card = require('../card/card.model');
 
 var UserSchema = new Schema({
   name: String,
@@ -13,6 +14,7 @@ var UserSchema = new Schema({
     default: 'user'
   },
   hashedPassword: String,
+  cards: [Card.schema],
   provider: String,
   salt: String,
   twitter: {},
