@@ -19,7 +19,7 @@
 
     that.inventory = [
     {
-      id: 1,
+      _id: 1,
       name: 'Addison Funk',
       title: 'Co-Found',
       company: 'CardUp',
@@ -31,7 +31,7 @@
       imageFile: 'addison.jpg'
     },
     {
-      id: 2,
+      _id: 2,
       name: 'Loren Crawford',
       title: 'Co-Found',
       company: 'CardUp',

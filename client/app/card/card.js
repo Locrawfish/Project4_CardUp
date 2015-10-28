@@ -17,13 +17,13 @@ function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       .state('cardNew', {
         url: '/cards/new',
         templateUrl: 'app/card/new.html',
-        controller: 'CardNewController',
+        controller: 'CardIndexController',
         controllerAs: 'ctrl'
       })
       .state('cardDetail', {
         url: '/cards/:id',
         templateUrl: 'app/card/show.html',
-        controller: 'CardShowController',
+        controller: 'CardIndexController',
         controllerAs: 'ctrl'
       });
 

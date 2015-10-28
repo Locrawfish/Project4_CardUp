@@ -4,6 +4,7 @@ var User = require('./user.model');
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
+var _ = require('lodash');
 
 var validationError = function(res, err) {
   return res.status(422).json(err);
@@ -17,6 +18,22 @@ exports.index = function(req, res) {
   User.find({}, '-salt -hashedPassword', function (err, users) {
     if(err) return res.status(500).send(err);
     res.status(200).json(users);
+  });
+};
+
+
+exports.update = function(req, res) {
+  console.log(req);
+  if(req.body._id) { delete req.body._id; }
+  User.findById(req.params.id, function (err, user) {
+    if (err) { return handleError(res, err); }
+    if(!user) { return res.status(404).send('Not Found'); }
+    var updated = _.merge(user, req.body);
+    updated.save(function (err) {
+      if (err) { return handleError(res, err); }
+      return res.status(200).json(user);
+      console.log(user + "line 33");
+    });
   });
 };
 
@@ -99,3 +116,9 @@ exports.me = function(req, res, next) {
 exports.authCallback = function(req, res, next) {
   res.redirect('/');
 };
+
+
+function handleError(res, err) {
+  console.log(err);
+  return res.status(500).send(err);
+}

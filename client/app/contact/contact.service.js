@@ -18,26 +18,16 @@
       });
     };
 
-    that.addCard = function(card) {
-      console.log(card);
-      console.log(myUser);
-      var found = that.findItemById(card);
-      if (found) {
-        found.name += card.name;
-      }
-      else {
-        myUser.cards.push(card._id);
-      }
+    that.addCard = function(user) {
+
+      $http.put('/api/users/' + user._id, user);
     };
 
-    that.removeCard = function(card) {
+    that.removeCard = function(card, user) {
       var index = that.contact.indexOf(card);
-      that.contact.splice(index, 1);
+      myUser.cards.splice(index, 1);
+      $http.delete('/api/users'+ user._id, user);
     };
 
-
-    that.clearCard = function() {
-      that.contact.length = 0;
-    };
   });
 })();
