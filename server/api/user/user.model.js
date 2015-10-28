@@ -4,33 +4,23 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
 var authTypes = ['twitter'];
+var Card = require('../card/card.model');
 
 var UserSchema = new Schema({
-  name: String,
-  email: { type: String, lowercase: true },
+  name:           String,
+  email:          { type: String, lowercase: true },
   role: {
-    type: String,
-    default: 'user'
+    type:         String,
+    default:      'user'
   },
   hashedPassword: String,
-  provider: String,
-  salt: String,
-  twitter: {},
-  google: {},
-  github: {}
+  cards:          [ Card.schema ],
+  provider:       String,
+  salt:           String,
+  twitter:        {},
+  google:         {},
+  github:         {}
 });
-
-// var UserSchema = new Schema({
-//   firstName: String,
-//   lastName: String,
-//   email: { type: String, lowercase: true },
-//   password: String
-
-//   linkedin: {
-//     email: { type: String, lowercase: true },
-//     password: String
-//   }
-// });
 
 /**
  * Virtuals

@@ -8,7 +8,7 @@ var errors = require('./components/errors');
 var express = require('express');
 var router = express.Router();
 
-var authenticate = function(req, res, next) {
+var authenticate = function(req, res, next, currentUser) {
   if(!req.isAuthenticated()) {
     res.redirect('/');
   }

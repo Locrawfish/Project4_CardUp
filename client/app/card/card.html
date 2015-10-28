@@ -3,45 +3,50 @@
 <section class="container-fluid main">
   <div class="row">
     <article class="search">
-
       <form class="navbar-form" role="search">
-        <div class="form-group"><input type="text" class="form-control" name="search" ng-model="ctrl.searchText" placeholder="search your cards here!"></div>
+        <div class="form-group"><input type="text" class="form-control" name="search" ng-model="ctrl.searchText" placeholder="search for contacts here!"></div>
 
         <button type="clear"  class="btn btn-warning" ng-click="ctrl.searchText = ''">Reset</button>
       </form>
 
 
-<div class="list-group">
-  <div class="row">
-    <div class="col-lg-1 col-md-2 col-sm-4 col-xs-10 animate-inventory" ng-repeat="card in filteredCards = ( ctrl.inventory | inventory : ctrl.searchText | orderBy: 'name' )">
+
+<!-- <div class="list-group">
+  <div class="row"> -->
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 animate-card" ng-repeat="card in filteredCards = ( ctrl.inventory | inventory : ctrl.searchText | orderBy: 'name' )">
+
+  <dt>name:</dt><dd>{{ card.name }}</dd><br>
+  <dt>title:</dt><dd>{{ card.title }}</dd><br>
+  <dt>company:</dt><dd>{{ card.company }}</dd><br>
+  <dt>mobile:</dt><dd>{{ cards[0].phone.mobile }}</dd><br>
+  <dt>work:</dt><dd>{{ cards[0].phone.work }}</dd><br>
+  <dt>linkedin:</dt><dd>{{ cards[0].linkedin }}</dd><br>
+  <dt>site:</dt><dd>{{ cards[0].site }}</dd><br>
+  <button class="btn btn-sm btn-success" ng-click="cards.addCard(card)">Add Contact</button>
+</div>
+
+
+
+
+
 
     <!-- card in ctrl.cards -->
-
     <a ng-click="ctrl.goCard(card)" class="list-group-item col-sm-10">
       <h3>{{ card.name }}</h3>
       <article class="row">
         <div class="col-xs-5">
-          <img class="middle" width="75px" height="75px" src="/assets/images/inventory/loren.jpg"/>
+          <!-- <img class="left" width="75px" height="75px" src="/assets/images/inventory/{{card.imageFile}}"/> -->
         </div>
 
-        <div class="col-lg-10">
-          <dl class="dl-horizontal">
-            <dt>name:</dt><dd>{{ card.name }}</dd>
-            <dt>title:</dt><dd>{{ card.title }}</dd>
-            <dt>company:</dt><dd>{{ card.company }}</dd>
-            <dt>mobile:</dt><dd>{{ card.phone.mobile }}</dd>
-            <dt>work:</dt><dd>{{ card.phone.work }}</dd>
-            <dt>linkedin:</dt><dd>{{ card.linkedin }}</dd>
-            <dt>site:</dt><dd>{{ card.site }}</dd>
-            <button class="btn btn-sm btn-success" ng-click="CardIndexController.addCard(card)">Add Contact</button>
-          </dl>
-        </div>
+<!--         <div class="col-lg-10">
+          <div ng-repeat="card in cards">
+            <dl class="dl-horizontal"> -->
+
+          <!-- </dl>
+        </div> -->
       </article>
     </a>
 
-        <!--   <div class="text-center">
-
-            </div> -->
           </div>
           <div class="animate-inventory text-center" ng-hide="filteredCards.length">
             <h3>No names match your search.</h3>
@@ -54,9 +59,9 @@
     <article class="col-sm-3">
       <h2>Your Contacts:</h2>
       <ul>
-        <li class="cart animate-cart" ng-repeat="card in ctrl.cart">
-          <span>{{ card.name + <br> + card.title <br> + card.company }}</span>
-          <button class="btn btn-danger btn-xs" ng-click="ctrl.removeItem(card)">Remove Contact</button>
+        <li class="contact animate-contact" ng-repeat="card in ctrl.contact">
+          <span>{{ cards[0].name + <br> + cards[0].title <br> + cards[0].company }}</span>
+          <button class="btn btn-danger btn-xs" ng-click="ctrl.removeCard(card)">Remove Contact</button>
         </li>
       </ul>
     </article>

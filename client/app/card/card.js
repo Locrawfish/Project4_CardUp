@@ -3,34 +3,34 @@
 
 angular
     .module('cardUpApp')
-    .config(routerConfig);
+    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+      // routerConfig);
 
   /** @ngInject */
-function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
-      .state('cards', {
+      .state('card', {
         url: '/cards',
         templateUrl: 'app/card/card.html',
         controller: 'CardIndexController',
         controllerAs: 'ctrl'
       })
-      .state('cardNew', {
+      .state('card-new', {
         url: '/cards/new',
         templateUrl: 'app/card/new.html',
-        controller: 'CardNewController',
+        controller: 'CardIndexController',
         controllerAs: 'ctrl'
       })
-      .state('cardDetail', {
+      .state('card-show', {
         url: '/cards/:id',
         templateUrl: 'app/card/show.html',
-        controller: 'CardShowController',
+        controller: 'CardIndexController',
         controllerAs: 'ctrl'
       });
 
 
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
-  }
+  })
 
 })();
 
