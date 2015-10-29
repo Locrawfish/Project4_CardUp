@@ -11,10 +11,14 @@
         return $http.get('/api/cards');
       };
 
-      self.addCard = function(card) {
-        console.log('addCard posting with card:', JSON.stringify(card));
+      self.createCard = function(card) {
+        console.log('createCard posting with card:', JSON.stringify(card));
         return $http.post('/api/cards', card);
-        console.log(card);
+      };
+
+      self.addMyCard = function(card) {
+        console.log('addMyCard posting w/ card: ' , JSON.stringify(user.mycards));
+        return $http.post('/api/users', card);
       };
 
 

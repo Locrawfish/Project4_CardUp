@@ -15,6 +15,7 @@ var UserSchema = new Schema({
   },
   hashedPassword: String,
   cards: [Card.schema],
+  mycards: [],
   provider: String,
   salt: String,
   twitter: {},

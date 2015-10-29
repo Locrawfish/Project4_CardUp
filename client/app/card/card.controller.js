@@ -19,12 +19,20 @@ angular
       console.log('that.inventory:', JSON.stringify(that.inventory));
     });
 
-    // that.goCard = function (card) {
-    //   $state.go( 'cardDetail', { cardName : card.name });
-    // };
 
-    // that.searchText = '';
-    // that.contact = ContactService.contact;
+    that.createCard = function(card) {
+      console.log("createCard: ", card);
+      CardService.createCard(card);
+    };
+
+    that.addMyCard = function(card) {
+      console.log("createCard: ", card);
+      CardService.addMyCard(card);
+    };
+
+    // that.submissionSuccess = function(isValid) {
+    //     isValid == true
+    // };
 
     var user = Auth.getCurrentUser();
 

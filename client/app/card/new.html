@@ -10,6 +10,7 @@
   <input type="text"
          ng-model="card.name"
          placeholder="Addison Funk"
+         ng-minlength="3"
          class="form-control">
 
   <input type="text"
@@ -32,6 +33,12 @@
          placeholder="1235556789"
          class="form-control">
 
+<input type="email"
+         ng-model="card.email"
+         placeholder="example@example.com"
+         class="form-control">
+
+
 <input type="text"
          ng-model="card.linkedin"
          placeholder="www.linkedin.com/in/addyfunk"
@@ -43,7 +50,8 @@
          class="form-control">
 
 
-  <input type="submit" id="form-button" ng-click="ctrl.addCard(card)" value="Save Card" />
+  <input type="submit" id="form-button" ng-click="ctrl.createCard(card)" value="Save Card" />
+  <!-- <div ng-show"submissionSuccess">Your card has been added!</div> -->
 </form>
 
 
