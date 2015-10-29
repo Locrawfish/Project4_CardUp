@@ -13,7 +13,8 @@ var CardSchema = new Schema({
   },
   email: String,
   linkedin: String,
-  site: String
+  site: String,
+  notes: String
 
 });
 
