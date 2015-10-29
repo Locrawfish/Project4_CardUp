@@ -6,11 +6,11 @@
       <li ng-show="isLoggedIn()"><p class="navbar-text">Hello, {{ getCurrentUser().name }}!</p> </li>
       <li><a href="/">Home</a></li>
 <!-- I removed the current user ejs logic to get the app working, since currentUser was not defined for me; we will need to add this back in -->
-      <li ng-show="isLoggedIn()" ng-class="{active: isActive('/login')}">Business Cards</li>
-      <ul>
+      <li ng-show="isLoggedIn()" ng-class="{active: isActive('/login')}"><a ui-sref='card'>Business Cards</a></li>
+      <!-- <ul>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/login')}"><a ui-sref='card'>My Contacts</a></li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href ='cards/new'>My Cards</a></li>
-      </ul>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/login')}"><a ui-sref='card-mycards'>My Cards</a></li>
+      </ul> -->
       <!-- Create a new card feature will now be on the My cards feature -->
      <!--  <li ng-show="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href='/cards/new'>Create a new card</a></li> -->
 
