@@ -1,4 +1,5 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <section class="container-fluid main">
   <div class="row">
     <article class="search">
@@ -13,14 +14,14 @@
 <!-- <div class="list-group">
   <div class="row"> -->
 <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 animate-card" ng-repeat="card in filteredCards = ( ctrl.inventory | inventory : ctrl.searchText | orderBy: 'name' )">
-
+  <dd><img src="addison.jpg" height="75px" width="75px"></dd>
   <dt>name:</dt><dd>{{ card.name }}</dd><br>
   <dt>title:</dt><dd>{{ card.title }}</dd><br>
   <dt>company:</dt><dd>{{ card.company }}</dd><br>
-  <dt>mobile:</dt><dd>{{ cards[0].phone.mobile }}</dd><br>
-  <dt>work:</dt><dd>{{ cards[0].phone.work }}</dd><br>
-  <dt>linkedin:</dt><dd>{{ cards[0].linkedin }}</dd><br>
-  <dt>site:</dt><dd>{{ cards[0].site }}</dd><br>
+  <dt>mobile:</dt><dd>{{ card.phone.mobile }}</dd><br>
+  <dt>work:</dt><dd>{{ card.phone.work }}</dd><br>
+  <dt>linkedin:</dt><dd>{{ card.linkedin }}</dd><br>
+  <dt>site:</dt><dd>{{ card.site }}</dd><br>
   <button class="btn btn-sm btn-success" ng-click="cards.addCard(card)">Add Contact</button>
 </div>
 

@@ -14,6 +14,7 @@
       self.addCard = function(card) {
         console.log('addCard posting with card:', JSON.stringify(card));
         return $http.post('/api/cards', card);
+        console.log(card);
       };
 
 
