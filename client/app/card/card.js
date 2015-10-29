@@ -20,13 +20,24 @@ angular
         controller: 'CardIndexController',
         controllerAs: 'ctrl'
       })
+      .state('card-mycards', {
+        url: '/cards/mycards',
+        templateUrl: 'app/card/mycards.html',
+        controller: 'CardIndexController',
+        controllerAs: 'ctrl'
+      })
+      .state('card-mycontacts', {
+        url: '/cards/mycontacts',
+        templateUrl: 'app/card/mycontacts.html',
+        controller: 'CardIndexController',
+        controllerAs: 'ctrl'
+      })
       .state('card-show', {
         url: '/cards/:id',
         templateUrl: 'app/card/show.html',
         controller: 'CardIndexController',
         controllerAs: 'ctrl'
       });
-
 
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
