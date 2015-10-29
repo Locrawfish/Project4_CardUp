@@ -3,18 +3,14 @@
 
 angular
   .module('cardUpApp')
-  .controller('CardIndexController', function($scope, CardService, $state) {
+  .controller('CardIndexController', CardIndexController);
 
-              // CardIndexController);
-  // .controller('BookCtrl', function($scope, Card) {
-  //   function getAllCards() {
-  //     Card.getAllCards()
-  //   }
-  // })
 // CardController.$inject = ['$http'];
 
   /** @ngInject */
-  // function CardIndexController(CardService, $state, ContactService) {
+
+  function CardIndexController(CardService, $state, ContactService, Auth) {
+
 
     var that = this;
 
@@ -30,13 +26,20 @@ angular
     // that.searchText = '';
     // that.contact = ContactService.contact;
 
+    var user = Auth.getCurrentUser();
+
     that.addCard = function(card) {
-      console.log('addCard:', card);
-      CardService.addCard(card);
+      // REMOVE THIS WITH REAL DATA, THIS IS A BAD IDEA
+      delete card._id;
+      ContactService.addCard(card);
+    };
+
+    that.removeCard = function(card) {
+      ContactService.removeCard(card);
     };
 
     // that.removeCard = function(card) {
     //   ContactService.removeCard(card);
     // };
 
-});
+};

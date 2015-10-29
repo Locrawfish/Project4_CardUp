@@ -1,21 +1,22 @@
 (function() {
   'use strict';
-
   // item === card
   // cart === contact
 
   angular.module('cardUpApp')
-         .service('ContactService', function() {
+  .service('ContactService', function(Auth, $http) {
 
+    var myUser = Auth.getCurrentUser();
     var that = this;
 
-    that.contact = [];
+    // that.contact = [];
 
-    function findItemById(cards, name) {
-      return _.find(cards, function(card) {
-        return card.name === name;
+     that.findItemById = function(card) {
+      return _.find(that.cards, function(card) {
+        console.log(card);
+        return card.id === (itemId);
       });
-    }
+    };
 
   //   function getCards(){
   //   $http
@@ -27,13 +28,7 @@
   // getCards();
 
     that.addCard = function(card) {
-      var found = findItemById(that.contact, card.name);
-      if (found) {
-        found.name += card.name;
-      }
-      else {
-        that.contact.push(angular.copy(card));
-      }
+      $http.post('/api/users/contacts', card);
     };
   //   function addCard(){
   //   $http
@@ -44,23 +39,12 @@
   //   self.newCard = {};
   // }
 
-    that.removeCard = function(card) {
+    that.removeCard = function(card, user) {
       var index = that.contact.indexOf(card);
-      that.contact.splice(index, 1);
+      myUser.cards.splice(index, 1);
+      $http.delete('/api/users'+ user._id, user);
     };
 
-  //   function removeCard(card){
-  //   $http
-  //     .delete("http://localhost:9000/cards/"+ card._id)
-  //     .then(function(response){
-  //       var index = self.all.indexOf(card);
-  //       self.all.splice(index, 1);
-  //     });
-  // }
 
-
-    // that.clearCard = function() {
-    //   that.contact.length = 0;
-    // };
   });
 })();

@@ -14,12 +14,12 @@ var UserSchema = new Schema({
     default:      'user'
   },
   hashedPassword: String,
-  cards:          [ Card.schema ],
-  provider:       String,
-  salt:           String,
-  twitter:        {},
-  google:         {},
-  github:         {}
+  cards: [Card.schema],
+  provider: String,
+  salt: String,
+  twitter: {},
+  google: {},
+  github: {}
 });
 
 /**
