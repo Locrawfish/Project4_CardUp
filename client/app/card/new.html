@@ -1,3 +1,7 @@
+<!-- flow.js + ng-flow libraries -->
+<script src="flow.js/dist/flow.min.js"></script>
+<script src="ng-flow/dist/ng-flow.min.js"></script>
+
 <div ng-include="'components/navbar/navbar.html'"></div>
 <body ng-app='cardUpApp'>
 
@@ -49,9 +53,29 @@
          placeholder="http://addisonfunk.github.io"
          class="form-control">
 
-
   <input type="submit" id="form-button" ng-click="ctrl.createCard(card)" value="Save Card" />
   <!-- <div ng-show"submissionSuccess">Your card has been added!</div> -->
+
+
+<!-- NG FLOW IMAGE UPLOAD -->
+  <input type="file" flow-btn />
+  <img flow-img="$flow.files[0]" />
+  <div flow-init flow-name="uploader.flow">
+
+  <button ng-click="upload()">Upload</button>
+
+  <table>
+    <tr ng-repeat="file in $flow.files">
+        <td>{{$index+1}}</td>
+        <td>{{file.name}}</td>
+        <td>{{file.msg}}</td>
+    </tr>
+   </table>
+
+    <div ng-repeat="file in uploader.flow.files" >
+          {{file.name}} <a ng-click="file.cancel()">X</a>
+        </div>
+
 </form>
 
 

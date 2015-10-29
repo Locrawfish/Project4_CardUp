@@ -30,6 +30,13 @@ angular
       CardService.addMyCard(card);
     };
 
+    function FilesCtrl() {
+      that.uploader = {};
+      that.upload = function () {
+      that.uploader.flow.upload();
+        }
+      }
+
     // that.submissionSuccess = function(isValid) {
     //     isValid == true
     // };
