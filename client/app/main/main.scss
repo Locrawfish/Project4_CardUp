@@ -7,7 +7,7 @@ html, body {
 body {
   padding: 50px;
   font: 14px 'Josefin Slab', serif;
-  background-image: url('../assets/images/light-man-hand-pen.jpg');
+  background-image: url('../assets/images/woman-hand-smartphone-desk.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: screen;
@@ -15,12 +15,12 @@ body {
 }
 
 
-.footer {
-  margin-left: 7%;
+#hard_line hr{
+  background-color:black;
 }
 
 .title h1{
-  margin-left:33%;
+  margin-left:37%;
   font-size: 75px;
 }
 
@@ -31,9 +31,9 @@ body {
 }
 
 #title_points h2{
-  color:#70DBDB;
+  color:black;
   text-align: center;
-  font-size: 3.2em;
+  font-size: 2.3em;
 }
 
 .box-shadow{
@@ -41,15 +41,20 @@ body {
 }
 
 #title_sections{
-    background-color: rgba(255, 255, 255, .8);
-    border-radius: 5px;
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: -5%;
+    background-color: rgba(255, 255, 255, .4);
+    // margin-top: 5%;
+    margin-right:0;
+    margin-left:0;
     min-height: 200px;
     padding: 10px;
-    color: #4d4d4d;
+    border:none;
+    // color: #4d4d4d;
 }
+
+// #wrapper-title {
+//   background-color: white;
+//   border-radius: 20px;
+// }
 
 /*NAVIGATION*/
 #wrapper{
@@ -104,7 +109,7 @@ body {
 }
 @keyframes slidein {
    0% { margin-left:  0; }
-  50% { margin-left:  5px; }
+  50% { margin-left:  6px; }
   /*75% { margin-left:  10px; }*/
   100% { margin-left:  0px; }
 }
@@ -118,14 +123,14 @@ body {
 
 //FOOTER
 .footer {
-    padding: 30px 0;
-    margin-top: 70px;
-    border-top: 1px solid #E5E5E5;
+    padding: 5px 0;
+    margin-top: 5px;
+    // border-top: 1px solid #E5E5E5;
     color:black;
+    margin-left: 37%;
+    font-size: 18px;
 }
- #footer{
-    margin-left: 30%
- }
+
 
 // SCAFFOLED SCSS
 // .thing-form {

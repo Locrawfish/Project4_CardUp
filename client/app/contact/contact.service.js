@@ -42,7 +42,7 @@
     that.removeCard = function(card, user) {
       var index = that.contact.indexOf(card);
       myUser.cards.splice(index, 1);
-      $http.delete('/api/users'+ user._id, user);
+      $http.delete('/api/users/contacts', card);
     };
 
 
