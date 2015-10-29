@@ -1,34 +1,34 @@
-<!-- flow.js + ng-flow libraries -->
-<script src="flow.js/dist/flow.min.js"></script>
-<script src="ng-flow/dist/ng-flow.min.js"></script>
+<link rel="shortcut icon" href="http://static.tmimgcdn.com/img/favicon.ico">
+  <link rel="icon" href="http://static.tmimgcdn.com/img/favicon.ico">
+<script type="text/javascript" src="js/switchery.min.js"></script>
 
 <div ng-include="'components/navbar/navbar.html'"></div>
 <body ng-app='cardUpApp'>
 
   <h2>Create a new business card by filling out the form below: </h2>
 
-<div>
+<!-- <div>
 
 <form novalidate class="form-new">
 
   <input type="text"
          ng-model="card.name"
-         placeholder="Addison Funk"
+         placeholder="Spongebob Squarepants"
          ng-minlength="3"
          class="form-control">
 
   <input type="text"
          ng-model="card.title"
-         placeholder="Co-Founder"
+         placeholder="Crabby Patty Flipper"
          class="form-control">
 
   <input type="text"
          ng-model="card.company"
-         placeholder="CardUp"
+         placeholder="The Crusty Krab"
          class="form-control">
 
   <input type="number"
-         ng-model="card.phone.mobile"
+         ng-model="card.phone.cell"
          placeholder="1235556789"
          class="form-control">
 
@@ -39,42 +39,100 @@
 
 <input type="email"
          ng-model="card.email"
-         placeholder="example@example.com"
+         placeholder="spongebob@pineapple.com"
          class="form-control">
 
 
 <input type="text"
          ng-model="card.linkedin"
-         placeholder="www.linkedin.com/in/addyfunk"
+         placeholder="www.linkedin.com/in/spongebob"
          class="form-control">
 
 <input type="text"
          ng-model="card.site"
-         placeholder="http://addisonfunk.github.io"
+         placeholder="http://spongebob.github.io"
          class="form-control">
+
+<textarea type="text"
+         input-align="top"
+         name="textarea" cols="30" rows="3"
+         id="form-notes"
+         ng-model="card.notes"
+         placeholder="Notes: I met Spongebob while visiting Patrick Star"
+         class="form-control">
+         </textarea>
 
   <input type="submit" id="form-button" ng-click="ctrl.createCard(card)" value="Save Card" />
   <!-- <div ng-show"submissionSuccess">Your card has been added!</div> -->
+<!--</form> -->
+
+<form novalidate>
+  <div class="col-2">
+    <label>
+      Name
+      <input placeholder="Spongebob Squarepants" ng-model="card.name" ng-minlenght="3" id="name" name="name" tabindex="1">
+    </label>
+  </div>
+
+  <div class="col-2">
+    <label>
+      Company
+      <input placeholder="The Crusty Krab" ng-model="card.company" id="company" name="company" tabindex="2">
+    </label>
+  </div>
+
+  <div class="col-3">
+    <label>
+      Title
+      <input placeholder="Crabby Patty Flipper" ng-model="card.title" id="phone" name="phone" tabindex="3">
+    </label>
+  </div>
+
+  <div class="col-3">
+    <label>
+      Email
+      <input placeholder="What is your e-mail address?" ng-model="card.email" id="email" name="email" tabindex="4">
+    </label>
+  </div>
+  <div class="col-3">
+    <label>
+      Phone
+      <input placeholder="1235556789" ng-model="card.phone" id="phone" name="phone">
+      <select tabindex="5">
+        <option>select one</option>
+        <option>mobile</option>
+        <option>work</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="col-4">
+    <label>
+      LinkedIn
+      <input placeholder="www.linkedin.com/in/spongebob" ng-model="card.linkedin" id="linkedin" name="linkedin" tabindex="6">
+    </label>
+  </div>
+  <div class="col-4">
+    <label>
+      Site
+      <input placeholder="http://spongebob.square.com" id="site" ng-model="card.site" name="site" tabindex="7">
+    </label>
+  </div>
+
+  <div class="col-4">
+    <label>
+      Notes
+      <input placeholder="Notes: I met Spongebob while visiting Patrick Star" id="site" name="site" input-align="top" name="textarea" cols="30" rows="3" ng-model="card.notes" tabindex="7">
+    </label>
+  </div>
 
 
-<!-- NG FLOW IMAGE UPLOAD -->
-  <input type="file" flow-btn />
-  <img flow-img="$flow.files[0]" />
-  <div flow-init flow-name="uploader.flow">
+ <!--  <div class="col-4 switch">
+    <label>E-mail Updates?</label>
+    <center style="position:relative;margin-bottom:8px;"><input type="checkbox" class="js-switch"></center>
+  </div> -->
 
-  <button ng-click="upload()">Upload</button>
-
-  <table>
-    <tr ng-repeat="file in $flow.files">
-        <td>{{$index+1}}</td>
-        <td>{{file.name}}</td>
-        <td>{{file.msg}}</td>
-    </tr>
-   </table>
-
-    <div ng-repeat="file in uploader.flow.files" >
-          {{file.name}} <a ng-click="file.cancel()">X</a>
-        </div>
+  <input type="submit" value="Save" class="btn btn-sm btn-success" id="form-button" ng-click="ctrl.createCard(card)"/>
 
 </form>
 
@@ -82,5 +140,5 @@
 <!--   TO TEST JSON DATA RENDERING: -->
 <!--   <pre>card = {{ card | json }} </pre>
   <pre>master = {{ master | json }} </pre> -->
-</div>
+<!-- </div> -->
 

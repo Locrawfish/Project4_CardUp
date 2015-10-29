@@ -5,8 +5,6 @@ angular
   .module('cardUpApp')
   .controller('CardIndexController', CardIndexController);
 
-// CardController.$inject = ['$http'];
-
   /** @ngInject */
 
   function CardIndexController(CardService, $state, ContactService, Auth) {
@@ -20,9 +18,10 @@ angular
     });
 
 
-    that.createCard = function(card) {
+    that.createCard = function(card, res) {
       console.log("createCard: ", card);
       CardService.createCard(card);
+      res.redirect('/cards');
     };
 
     that.addMyCard = function(card) {
@@ -37,10 +36,6 @@ angular
         }
       }
 
-    // that.submissionSuccess = function(isValid) {
-    //     isValid == true
-    // };
-
     var user = Auth.getCurrentUser();
 
     that.addCard = function(card) {
@@ -52,9 +47,5 @@ angular
     that.removeCard = function(card) {
       ContactService.removeCard(card);
     };
-
-    // that.removeCard = function(card) {
-    //   ContactService.removeCard(card);
-    // };
 
 };
