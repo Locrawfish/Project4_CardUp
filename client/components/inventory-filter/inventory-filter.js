@@ -3,6 +3,9 @@
   filter('inventory', function() {
 
     function isMatch(str, pattern) {
+      if (!str) {
+        return false;
+      }
       if (pattern) {
         return str.toLowerCase().indexOf(pattern.toLowerCase()) !== -1;
       }
@@ -18,9 +21,9 @@
       };
       angular.forEach(inventory, function (card) {
         if (isMatch(card.name   , this.searchText) ||
-            isMatch(card.title      , this.searchText) ||
+            isMatch(card.title  , this.searchText) ||
             isMatch(card.company, this.searchText) ||
-            isMatch(card.email, this.searchText)) {
+            isMatch(card.email  , this.searchText)) {
           this.out.push(card);
         }
       }, cards);

@@ -1,20 +1,131 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CardUp</title> -->
+
 <div ng-include="'components/navbar/navbar.html'"></div>
 
+<!-- </head> -->
+<body ng-app='cardUpApp'>
+
+  <h2>Create a new business card by filling out the form below: </h2>
+
+<div>
+
+<form novalidate class="form-new">
+  <!-- <label for="name">name</label> -->
+  <input type="text"
+         ng-model="card.name"
+         placeholder="Addison Funk"
+         class="form-control">
 
 
-<div class="container">
-<div ng-controller="CardNewController as ctrl">
-  <form novalidate class="simple-form">
-    <h3>
-    <input type="text" placeholder="name" ng-model="card.name" /><br />
-    </h3>
-    <input type="text" placeholder="title" ng-model="card.title" /><br />
-    <input type="text" placeholder="company" ng-model="card.company" /><br />
-    <input type="text" placeholder="mobile" ng-model="card.phone.cell" /><br />
-    <input type="text" placeholder="work" ng-model="card.phone.work" /><br />
-    <input type="text" placeholder="email" ng-model="card.email" /><br />
-    <input type="text" placeholder="linkedin" ng-model="card.linkedin" /><br />
-    <input type="text" placeholder="site" ng-model="card.site" /><br />
-    <button type="submit">Save</button>
+<!-- <form novalidate class="form-new"> -->
+<!--   <label for="title">Title</label> -->
+  <input type="text"
+         ng-model="card.title"
+         placeholder="Co-Founder"
+         class="form-control">
+
+  <input type="text"
+         ng-model="card.company"
+         placeholder="CardUp"
+         class="form-control">
+
+  <input type="number"
+         ng-model="card.phone.mobile"
+         placeholder="1235556789"
+         class="form-control">
+
+<input type="number"
+         ng-model="card.phone.work"
+         placeholder="1235556789"
+         class="form-control">
+
+<input type="text"
+         ng-model="card.linkedin"
+         placeholder="www.linkedin.com/in/addyfunk"
+         class="form-control">
+
+  <input type="submit" id="form-button" ng-click="ctrl.addCard(card)" value="Save Card" />
 </form>
+
+  <pre>card = {{ card | json }} </pre>
+  <pre>master = {{ master | json }} </pre>
+
+
+<!--
+<div class="form-new">
+  <label for="company">company</label>
+  <input type="text"
+         placeholder="CardUp"
+         class="form-control"
+         id="company"
+         name="company"
+         value="{{ card.company }}">
 </div>
+
+<div class="form-new">
+  <label for="mobile">mobile phone</label>
+  <input type="number"
+         placeholder="1235556789"
+         class="form-control"
+         id="mobile"
+         name="mobile"
+         value="{{ card.phone.mobile }}">
+</div>
+
+<div class="form-new">
+  <label for="work">work phone</label>
+  <input type="number"
+         placeholder="1235556789"
+         class="form-control"
+         id="work"
+         name="work"
+         value="{{ card.phone.work }}">
+</div>
+
+<div class="form-new">
+  <label for="linkedin">linkedin</label>
+  <input type="text"
+         placeholder="www.linkedin.com/in/addyfunk"
+         class="form-control"
+         id="linkedin"
+         name="linkedin"
+         value="{{ card.linkedin }}">
+</div>
+
+<div class="form-new">
+  <label for="site">site</label>
+  <input type="text"
+         placeholder="www.example.com"
+         class="form-control"
+         id="site"
+         name="site"
+         value="{{ card.site }}">
+</div>
+
+<div class="form-new">
+         <a href="/cards" class="btn btn-primary">Back</a>
+        <button type="submit" class="btn btn-success">Save</button>
+</div> -->
+
+</div>
+<!-- </body>
+</html> -->
+
+
+
+
+  <!--   <input type="text" placeholder="title" ng-model="currentUser.card.title" /><br />
+    <input type="text" placeholder="company" ng-model="currentUser.card.company" /><br />
+    <input type="text" placeholder="mobile" ng-model="currentUser.card.phone.cell" /><br />
+    <input type="text" placeholder="work" ng-model="currentUser.card.phone.work" /><br />
+    <input type="text" placeholder="email" ng-model="currentUser.card.email" /><br />
+    <input type="text" placeholder="linkedin" ng-model="currentUser.card.linkedin" /><br />
+    <input type="text" placeholder="site" ng-model="currentUser.card.site" /><br />
+    <button type="submit" ng-click="save()" class="btn btn-success">Save</button>
+    <a href="/cards" class="btn btn-primary">Back</a>
+</form>
+</div> -->

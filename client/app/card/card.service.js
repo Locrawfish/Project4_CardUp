@@ -1,9 +1,21 @@
-(function() {
+
   'use strict';
 
   angular
     .module('cardUpApp')
-    .service('CardService', CardService);
+    .service('CardService', function($http) {
+
+      var self = this;
+
+      self.getAllCards = function() {
+        return $http.get('/api/cards');
+      };
+
+      self.addCard = function(card) {
+        console.log('addCard posting with card:', JSON.stringify(card));
+        return $http.post('/api/cards', card);
+      };
+
 
 /** @ngInject */
     function CardService() {
@@ -56,4 +68,6 @@
     }
   ];
  }
-})();
+});
+// I commented this out b/c I got an error after merging; may need to be added back in
+// ();
