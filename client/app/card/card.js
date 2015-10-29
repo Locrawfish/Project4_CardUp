@@ -25,6 +25,12 @@ angular
         templateUrl: 'app/card/show.html',
         controller: 'CardIndexController',
         controllerAs: 'ctrl'
+      })
+      .state('card-mycontacts', {
+        url: '/cards/mycontacts',
+        templateUrl: 'app/card/mycontacts.html',
+        controller: 'CardIndexController',
+        controllerAs: 'ctrl'
       });
 
 
