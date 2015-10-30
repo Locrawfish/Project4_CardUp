@@ -18,12 +18,12 @@
       $http.post('/api/users/contacts', card);
     };
 
-
     that.removeCard = function(card) {
       var index = myUser.cards.indexOf(card);
       myUser.card.splice(index, 1);
       $http.delete('/api/cards'+ card._id, card);
       res.redirect('/cards');
+
     };
 
 
