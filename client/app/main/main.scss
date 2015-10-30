@@ -7,7 +7,7 @@ html, body {
 body {
   padding: 50px;
   font: 14px 'Josefin Slab', serif;
-  background-image: url('../assets/images/light-man-hand-pen.jpg');
+  background-image: url('../assets/images/woman-hand-smartphone-desk.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: screen;
@@ -15,25 +15,26 @@ body {
 }
 
 
-.footer {
-  margin-left: 7%;
+#hard_line hr{
+  background-color:black;
 }
 
 .title h1{
-  margin-left:33%;
+  margin-left:37%;
   font-size: 75px;
 }
 
 #slogan{
   margin-left:20%;
   color: black;
-  // background-color: white;
+  text-shadow: 1px 1px #fff;
 }
 
+
 #title_points h2{
-  color:#70DBDB;
+  color:black;
   text-align: center;
-  font-size: 3.2em;
+  font-size: 2.3em;
 }
 
 .box-shadow{
@@ -41,14 +42,31 @@ body {
 }
 
 #title_sections{
-    background-color: rgba(255, 255, 255, .8);
-    border-radius: 5px;
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: -5%;
+    background-color: rgba(255, 255, 255, 0.9);
+    // margin-top: 5%;
+    margin-right:0;
+    margin-left:0;
+    margin-top:5px;
     min-height: 200px;
     padding: 10px;
-    color: #4d4d4d;
+    border:none;
+    border-radius: 15px;
+    // color: #4d4d4d;
+}
+
+#main-points {
+  text-align: center;
+  margin-left:40%;
+}
+
+.active{
+  color:#70DBDB;
+}
+
+#wrapper-title p{
+  color:black;
+  text-align: center;
+  font-size: 1.6em;
 }
 
 /*NAVIGATION*/
@@ -97,15 +115,17 @@ body {
   color: #0099CC;
   color: #70DBDB;
   -webkit-animation-name: slidein; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
     animation-name: slidein;
     animation-duration: 1s;
 
 }
 @keyframes slidein {
    0% { margin-left:  0; }
+  25% { margin-left:  4px; }
   50% { margin-left:  5px; }
-  /*75% { margin-left:  10px; }*/
+  75% { margin-left:  4px; }
+  85% { margin-left:  2px; }
   100% { margin-left:  0px; }
 }
 
@@ -115,17 +135,21 @@ body {
   margin-left: 75px;
   text-decoration: none;
 }
+//CARD.HTML
+.add_contact .btn form{
+  font-size: 1.5;
+}
 
 //FOOTER
 .footer {
-    padding: 30px 0;
-    margin-top: 70px;
-    border-top: 1px solid #E5E5E5;
+    padding: 5px 0;
+    margin-top: 5px;
+    // border-top: 1px solid #E5E5E5;
     color:black;
+    margin-left: 37%;
+    font-size: 18px;
 }
- #footer{
-    margin-left: 30%
- }
+
 
 // SCAFFOLED SCSS
 // .thing-form {
