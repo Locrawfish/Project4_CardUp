@@ -13,27 +13,35 @@
       <br>
       <div id = "wrapper-title">
         <div class = 'row' id = 'title_points'>
-          <div class = 'col-lg-4' id = 'title_sections'>
+          <div class = 'col-lg-4' id = 'title_sections' ng-mouseenter="show = true" ng-mouseleave="show = false">
+            <span ng-hide = 'show' id = 'main-points'><i class="fa fa-key fa-4x"></i></span>
+            <span ng-show = 'show' style = "color: #70DBDB;" id = 'main-points'><i class="fa fa-key fa-4x"></i></span>
             <h2><b>Accessible</b></h2>
             <p>With CardUp, if you have your phone, you have your business cards.</p>
           </div>
-          <div class = 'col-lg-4' id = 'title_sections'>
-            <h2><b>Low Cost</b></h2>
+          <div class = 'col-lg-4' id = 'title_sections' ng-mouseenter="show1 = true" ng-mouseleave="show1 = false">
+            <span ng-hide = 'show1'  id = 'main-points'><i class="fa fa-usd fa-4x"></i></span>
+            <span ng-show = 'show1' style = "color: #70DBDB;" id = 'main-points'><i class="fa fa-usd fa-4x"></i></span>
+            <h2 ><b>Low Cost</b></h2>
+            <p>No limitations on cards shares or your customized cards.</p>
           </div>
-          <div class = 'col-lg-4 ' id = 'title_sections'>
-            <h2><b>Never forget a face</b></h2>
+          <div class = 'col-lg-4 ' id = 'title_sections' ng-mouseenter="show2 = true" ng-mouseleave="show2 = false">
+            <span ng-hide = 'show2' id = 'main-points'><i class="fa fa-list fa-4x"></i></span>
+            <span ng-show = 'show2' style = "color: #70DBDB;" id = 'main-points'><i class="fa fa-list fa-4x"></i></span>
+            <h2><b>Organized</b></h2>
+            <p>Search your cards to easily find contacts.</p>
           </div>
+          <!-- <span ng-mouseenter="show = true" ng-mouseleave="show = false">
+            Mouse over me.
+          </span>
+          <div>Hello!</div> -->
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<span ng-mouseenter="show = true" ng-mouseleave="show = false">
-  Mouse over me.
-</span>
 
-<div ng-show="show">Hello!</div>
 
 <div class = 'row'>
   <div class = "col-lg-10 col-lg-offset-2">

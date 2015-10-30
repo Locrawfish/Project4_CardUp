@@ -4,9 +4,12 @@
       <li id="sidebar-brand">cardUp</li>
       <!-- Add CSS to this below so the Hello {name} is bigger-->
       <li ng-show="isLoggedIn()"><p class="navbar-text">Hello, {{ getCurrentUser().name }}!</p> </li>
-      <li><a href="/">Home</a></li>
-<!-- I removed the current user ejs logic to get the app working, since currentUser was not defined for me; we will need to add this back in -->
-      <li ng-show="isLoggedIn()" ng-class="{active: isActive('/login')}"><a ui-sref='card'>Business Cards</a></li>
+      <li ng-mouseenter="show_arrow1 = true" ng-mouseleave="show_arrow1 = false" ng-class="{active: isActive('/')}">
+        <a href="/" ng-class="{active: isActive('/')}" ><i ng-class="{active: isActive('/')}" class="fa fa-angle-double-right" ></i>
+          Home</a></li>
+      <li ng-mouseenter="show_arrow2 = true" ng-mouseleave="show_arrow2 = false" ng-show="isLoggedIn()" ng-class="{active: isActive('/login')}">
+        <a ui-sref='card' ng-class="{active: isActive('/login')}" ><i ng-class="{active: isActive('/login')}" class="fa fa-angle-double-right" ng-show= "show_arrow2"></i>
+          Business Cards</a></li>
       <!-- <ul>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/login')}"><a ui-sref='card'>My Contacts</a></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/login')}"><a ui-sref='card-mycards'>My Cards</a></li>
@@ -15,11 +18,24 @@
      <!--  <li ng-show="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href='/cards/new'>Create a new card</a></li> -->
 
       <!-- <li><a href="#"></a></li> -->
-      <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
-        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
+      <li ng-mouseenter="show_arrow3 = true" ng-mouseleave="show_arrow3 = false" ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}">
+        <a href="/signup" ng-class="{active: isActive('/login')}" ><i ng-class="{active: isActive('/login')}" ng-show = "show_arrow3" class="fa fa-angle-double-right"></i>
+          Sign up</a></li>
+        <li ng-mouseenter="show_arrow4 = true" ng-mouseleave="show_arrow4 = false"ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}">
+          <a href="/login" ng-class="{active: isActive('/login')}">
+            <i ng-show = "show_arrow4" ng-class="{active: isActive('/login')}" class="fa fa-angle-double-right"></i>
+            Login</a></li>
 
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings">Settings<span class="glyphicon glyphicon-cog"></span></a></li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li>
+        <li ng-mouseenter="show_arrow5 = true" ng-mouseleave="show_arrow5 = false" ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}">
+          <a href="/settings" ng-class="{active: isActive('/login')}">
+            <i ng-show = "show_arrow5" class="fa fa-angle-double-right" ng-class="{active: isActive('/login')}">
+            </i> Settings
+            <!-- <span class="glyphicon glyphicon-cog"></span> -->
+          </a></li>
+        <li ng-mouseenter="show_arrow6 = true" ng-mouseleave="show_arrow6 = false" ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}">
+          <a href="" ng-click="logout()" ng-class="{active: isActive('/login')}">
+            <i  ng-show = "show_arrow6" ng-class="{active: isActive('/login')}" class="fa fa-angle-double-right"></i>
+            Logout</a></li>
     </ul>
   </div>
 </div>
