@@ -7,6 +7,7 @@ h2 {
   text-align: center;
   margin-left: 2%;
   margin-bottom: 25px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 h3 input {
@@ -265,4 +266,12 @@ label > input:focus, label > select:focus {
   opacity: 1;
 }
 
+#new_contact{
+  background-color: rgba(255, 255, 255, .9);
+  color:black;
+  border-radius: 15px;
+  }
 
+#new_contact form label{
+  color:black;
+}
