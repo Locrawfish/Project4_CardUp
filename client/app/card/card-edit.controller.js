@@ -18,4 +18,9 @@ function CardEditController(CardService, $stateParams, ContactService, Auth) {
     that.card = res.data;
     console.log('CardEditController got card: ' + JSON.stringify(that.card));
   });
+
+  that.editCard = function(card, res) {
+      console.log(JSON.stringify(card));
+      $state.go('card-edit', { id: card._id });
+    };
 }
