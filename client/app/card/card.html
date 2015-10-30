@@ -20,7 +20,7 @@
 <div class="business-cards col-lg-4 col-md-6 col-sm-12 col-xs-12 animate-card" ng-repeat="card in filteredCards = ( ctrl.inventory | inventory : ctrl.searchText | orderBy: 'name' )">
  <!--  <dd><img src="../assets/images/inventory/pexels-photo-medium.jpeg" height="75px" width="75px">
   <img src="../assets/images/inventory/light-clouds-grass-ground-medium.jpg" height="75px" width="75px"><img src="../assets/images/inventory/IMG_4049.jpg" height="75px" width="75px"></dd> -->
-  <dd><img src="../assets/images/inventory/cardup.jpg" height="75px" width="250px"></dd>
+  <dd><img src="../assets/images/inventory/cardup.png" height="75px" width="250px"></dd>
   <br>
   <dt>name:</dt><dd>{{ card.name }}</dd><br>
   <dt>title:</dt><dd>{{ card.title }}</dd><br>
@@ -31,7 +31,7 @@
   <dt>linkedin:</dt><dd>{{ card.linkedin }}</dd><br>
   <dt>site:</dt><dd>{{ card.site }}</dd><br>
   <dt>notes:</dt><dd>{{ card.notes }}</dd><br><br><br>
-  <button class="btn btn-sm btn-danger" ng-click="cards.removeCard(card)">Remove Contact</button>
+  <button class="btn btn-sm btn-danger" ng-click="ctrl.removeCard(card)">Remove Contact</button>
 </div>
 
 
