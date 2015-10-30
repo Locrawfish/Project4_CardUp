@@ -6,7 +6,7 @@ angular
 
   /** @ngInject */
 
-function CardEditController(CardService, $stateParams, ContactService, Auth) {
+function CardEditController(CardService, $stateParams, ContactService, Auth, $location) {
 
   var that = this;
   var user = Auth.getCurrentUser();
@@ -18,4 +18,10 @@ function CardEditController(CardService, $stateParams, ContactService, Auth) {
     that.card = res.data;
     console.log('CardEditController got card: ' + JSON.stringify(that.card));
   });
+  that.editCard = function(card) {
+      CardService.editCard(card)
+        .success(function() {
+          $location.path('/cards')
+      });
+    };
 }
