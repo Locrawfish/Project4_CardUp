@@ -7,7 +7,7 @@
     var myUser = Auth.getCurrentUser();
     var that = this;
 
-     that.findItemById = function(card) {
+     that.findItemById = function(itemId) {
       return _.find(that.cards, function(card) {
         console.log(card);
         return card.id === (itemId);
@@ -18,7 +18,7 @@
       $http.post('/api/users/contacts', card);
     };
 
-    that.removeCard = function(card, res) {
+    that.removeCard = function(card) {
       var index = myUser.card;
       myUser.cards.splice(index, 1);
       $http.delete('/api/cards/'+ card._id, card);

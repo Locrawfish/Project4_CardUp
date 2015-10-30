@@ -1,15 +1,14 @@
-
-  'use strict';
+'use strict';
 
   angular
     .module('cardUpApp')
     .service('CardService', CardService);
 
 /** @ngInject */
-    function CardService($http, $stateParams) {
+    function CardService($http) {
 
       var self = this;
-      var cardId = $stateParams.id;
+      // var cardId = $stateParams.id;
 
       self.getAllCards = function() {
         return $http.get('/api/cards');
@@ -27,7 +26,6 @@
       };
 
       self.addMyCard = function(card) {
-        console.log('addMyCard posting w/ card: ' , JSON.stringify(user.mycards));
         return $http.post('/api/users', card);
       };
 

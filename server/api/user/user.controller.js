@@ -33,7 +33,6 @@ exports.update = function(req, res) {
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.status(200).json(user);
-      console.log(user + "line 33");
     });
   });
 };

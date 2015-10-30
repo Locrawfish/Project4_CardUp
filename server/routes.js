@@ -17,7 +17,7 @@ var authenticate = function(req, res, next, currentUser) {
   }
 }
 
-module.exports = function(app) {
+module.exports = function(app, currentUser, makeError) {
 
   // Insert routes below
   app.use('/api/cards', require('./api/card'));

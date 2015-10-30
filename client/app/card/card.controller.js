@@ -10,7 +10,7 @@ angular
   function CardIndexController(CardService, $state, ContactService, Auth, $location) {
 
     var that = this;
-    var user = Auth.getCurrentUser();
+    // var user = Auth.getCurrentUser();
 
     CardService.getAllCards().then(function(res){
       that.inventory = res.data;
@@ -18,29 +18,29 @@ angular
     });
 
 
-    that.createCard = function(card, res) {
+    that.createCard = function(card) {
       CardService.createCard(card)
         .success(function() {
-          $location.path('/cards')
+          $location.path('/cards');
       });
     };
 
-    that.editCard = function(card, res) {
+    that.editCard = function(card) {
       console.log(JSON.stringify(card));
       $state.go('card-edit', { id: card._id });
     };
 
     that.addMyCard = function(card) {
-      console.log("createCard: ", card);
+      console.log('createCard: ', card);
       CardService.addMyCard(card);
     };
 
-    function FilesCtrl() {
-      that.uploader = {};
-      that.upload = function () {
-      that.uploader.flow.upload();
-        }
-      }
+    // function FilesCtrl() {
+    //   that.uploader = {};
+    //   that.upload = function () {
+    //   that.uploader.flow.upload();
+    //     };
+    //   }
 
     that.addCard = function(card) {
       // REMOVE THIS WITH REAL DATA, THIS IS A BAD IDEA

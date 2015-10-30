@@ -9,7 +9,7 @@ angular
 function CardEditController(CardService, $stateParams, ContactService, Auth, $location) {
 
   var that = this;
-  var user = Auth.getCurrentUser();
+  // var user = Auth.getCurrentUser();
 
   var cardId = $stateParams.id;
   console.log('cardId:', cardId);
@@ -22,7 +22,7 @@ function CardEditController(CardService, $stateParams, ContactService, Auth, $lo
   that.editCard = function(card) {
       CardService.editCard(card)
       .success(function() {
-        $location.path('/cards')
+        $location.path('/cards');
       });
 
     };
