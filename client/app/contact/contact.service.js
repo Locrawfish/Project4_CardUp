@@ -23,7 +23,7 @@
       myUser.cards.splice(index, 1);
       $http.delete('/api/cards/'+ card._id, card);
       console.log(card);
-      res.redirect('http://localhost:9000/cards');
+
 
     // that.removeCard = function(card) {
     //   var index = myUser.cards.indexOf(card);

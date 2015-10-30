@@ -7,6 +7,83 @@
 
   <h2>Create a new business card by filling out the form below: </h2>
 
+<form novalidate>
+  <div class="col-2">
+    <label>
+      Name
+      <input placeholder="Spongebob Squarepants" ng-model="card.name" ng-minlenght="3" id="name" name="name" tabindex="1">
+    </label>
+  </div>
+
+  <div class="col-2">
+    <label>
+      Company
+      <input placeholder="The Crusty Krab" ng-model="card.company" id="company" name="company" tabindex="2">
+    </label>
+  </div>
+
+  <div class="col-3">
+    <label>
+      Title
+      <input placeholder="Crabby Patty Flipper" ng-model="card.title" id="phone" name="phone" tabindex="3">
+    </label>
+  </div>
+
+  <div class="col-3">
+    <label>
+      Email
+      <input placeholder="What is your e-mail address?" ng-model="card.email" id="email" name="email" tabindex="4">
+    </label>
+  </div>
+  <div class="col-3">
+    <label>
+      Phone
+      <input placeholder="1235556789" ng-model="card.phone" id="phone" name="phone">
+      <select tabindex="5">
+        <option>select one</option>
+        <option>mobile</option>
+        <option>work</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="col-4">
+    <label>
+      LinkedIn
+      <input placeholder="www.linkedin.com/in/spongebob" ng-model="card.linkedin" id="linkedin" name="linkedin" tabindex="6">
+    </label>
+  </div>
+  <div class="col-4">
+    <label>
+      Site
+      <input placeholder="http://spongebobis.square.com" id="site" ng-model="card.site" name="site" tabindex="7">
+    </label>
+  </div>
+
+  <div class="col-4">
+    <label>
+      Notes
+      <input placeholder="Notes: I met Spongebob while visiting Patrick Star" id="site" name="site" input-align="top" name="textarea" cols="30" rows="3" ng-model="card.notes" tabindex="7">
+    </label>
+  </div>
+
+
+ <!--  <div class="col-4 switch">
+    <label>E-mail Updates?</label>
+    <center style="position:relative;margin-bottom:8px;"><input type="checkbox" class="js-switch"></center>
+  </div> -->
+  <form method="link" action="cards">
+  <input type="submit" value="Save" class="btn btn-sm btn-success" id="form-button" ng-click="ctrl.createCard(card)"/>
+  </form>
+
+</form>
+
+<!--   TO TEST JSON DATA RENDERING: -->
+<!--   <pre>card = {{ card | json }} </pre>
+  <pre>master = {{ master | json }} </pre> -->
+<!-- </div> -->
+
+
 <!-- <div>
 
 <form novalidate class="form-new">
@@ -63,82 +140,5 @@
          </textarea>
 
   <input type="submit" id="form-button" ng-click="ctrl.createCard(card)" value="Save Card" />
-  <!-- <div ng-show"submissionSuccess">Your card has been added!</div> -->
+  <div ng-show"submissionSuccess">Your card has been added!</div> -->
 <!--</form> -->
-
-<form novalidate>
-  <div class="col-2">
-    <label>
-      Name
-      <input placeholder="Spongebob Squarepants" ng-model="card.name" ng-minlenght="3" id="name" name="name" tabindex="1">
-    </label>
-  </div>
-
-  <div class="col-2">
-    <label>
-      Company
-      <input placeholder="The Crusty Krab" ng-model="card.company" id="company" name="company" tabindex="2">
-    </label>
-  </div>
-
-  <div class="col-3">
-    <label>
-      Title
-      <input placeholder="Crabby Patty Flipper" ng-model="card.title" id="phone" name="phone" tabindex="3">
-    </label>
-  </div>
-
-  <div class="col-3">
-    <label>
-      Email
-      <input placeholder="What is your e-mail address?" ng-model="card.email" id="email" name="email" tabindex="4">
-    </label>
-  </div>
-  <div class="col-3">
-    <label>
-      Phone
-      <input placeholder="1235556789" ng-model="card.phone" id="phone" name="phone">
-      <select tabindex="5">
-        <option>select one</option>
-        <option>mobile</option>
-        <option>work</option>
-      </select>
-    </label>
-  </div>
-
-  <div class="col-4">
-    <label>
-      LinkedIn
-      <input placeholder="www.linkedin.com/in/spongebob" ng-model="card.linkedin" id="linkedin" name="linkedin" tabindex="6">
-    </label>
-  </div>
-  <div class="col-4">
-    <label>
-      Site
-      <input placeholder="http://spongebob.square.com" id="site" ng-model="card.site" name="site" tabindex="7">
-    </label>
-  </div>
-
-  <div class="col-4">
-    <label>
-      Notes
-      <input placeholder="Notes: I met Spongebob while visiting Patrick Star" id="site" name="site" input-align="top" name="textarea" cols="30" rows="3" ng-model="card.notes" tabindex="7">
-    </label>
-  </div>
-
-
- <!--  <div class="col-4 switch">
-    <label>E-mail Updates?</label>
-    <center style="position:relative;margin-bottom:8px;"><input type="checkbox" class="js-switch"></center>
-  </div> -->
-
-  <input type="submit" value="Save" class="btn btn-sm btn-success" id="form-button" onclick="redirect()" ng-click="ctrl.createCard(card)"/>
-
-</form>
-
-
-<!--   TO TEST JSON DATA RENDERING: -->
-<!--   <pre>card = {{ card | json }} </pre>
-  <pre>master = {{ master | json }} </pre> -->
-<!-- </div> -->
-

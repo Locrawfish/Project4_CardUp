@@ -8,6 +8,10 @@ h2 {
   margin-left: 2%;
   margin-bottom: 25px;
 }
+h4 {
+  text-shadow: 2px 2px white;
+  font-size: 2.5em;
+}
 
 h3 input {
   border: none;
@@ -45,6 +49,14 @@ form #form-button {
 
 .btn-warning {
   margin-left: 5%;
+}
+
+.btn-danger {
+  margin-top: -5px;
+}
+
+.btn-info {
+  margin-top: 0px;
 }
 
 .business-cards {
