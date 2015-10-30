@@ -10,28 +10,28 @@
     <div class="col--2">
       <label>
         Name
-        <input placeholder="Spongebob Squarepants" ng-model="card.name" ng-minlenght="3" id="name" name="name" tabindex="1">
+        <input placeholder="Spongebob Squarepants" ng-model="card.name" ng-minlenght="3" id="name" name="name" tabindex="1" ng-class = "{'error': card.name.length < 3, 'valid': card.name.length >=3}">
       </label>
     </div>
 
     <div class="col-2">
       <label>
         Company
-        <input placeholder="The Crusty Krab" ng-model="card.company" id="company" name="company" tabindex="2">
+        <input placeholder="The Crusty Krab" ng-model="card.company" id="company" name="company" tabindex="2" ng-class = "{'error': card.company.length < 3, 'valid': card.company.length >=3}">
       </label>
     </div>
 
     <div class="col-3">
       <label>
         Title
-        <input placeholder="Crabby Patty Flipper" ng-model="card.title" id="phone" name="phone" tabindex="3">
+        <input placeholder="Crabby Patty Flipper" ng-model="card.title" id="phone" name="phone" tabindex="3" ng-class = "{'error': card.title.length < 3, 'valid': card.title.length >=3}">
       </label>
     </div>
 
     <div class="col-3">
       <label>
         Email
-        <input placeholder="What is your e-mail address?" ng-model="card.email" id="email" name="email" tabindex="4">
+        <input placeholder="What is your e-mail address?" ng-model="card.email" id="email" name="email" tabindex="4" ng-class = "{'error': card.email.length < 3, 'valid': card.email.length >=3}">
       </label>
     </div>
     <div class="col-3">
@@ -72,7 +72,7 @@
       <center style="position:relative;margin-bottom:8px;"><input type="checkbox" class="js-switch"></center>
     </div> -->
 
-    <input type="submit" value="Save" class="btn btn-sm btn-success col-lg-offset-4" id="form-button" onclick="redirect()" ng-click="ctrl.createCard(card)"/>
+    <input type="submit" value="Save" class="btn btn-sm btn-success col-lg-2" id="form-button"  ng-click="ctrl.createCard(card)"/>
 
   </form>
 </div>

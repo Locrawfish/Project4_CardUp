@@ -7,7 +7,7 @@ angular
 
   /** @ngInject */
 
-  function CardIndexController(CardService, $state, ContactService, Auth) {
+  function CardIndexController(CardService, $state, ContactService, Auth, $location) {
 
 
     var that = this;
@@ -19,9 +19,11 @@ angular
 
 
     that.createCard = function(card, res) {
-      console.log("createCard: ", card);
-      CardService.createCard(card);
-      res.redirect('/cards');
+      // console.log("createCard: ", card);
+      CardService.createCard(card)
+        .success(function() {
+          $location.path('/cards')
+      });
     };
 
     that.addMyCard = function(card) {
@@ -47,5 +49,8 @@ angular
     that.removeCard = function(card) {
       ContactService.removeCard(card);
     };
+    that.go = function ( path ) {
+      $location.path( path );
+};
 
 };

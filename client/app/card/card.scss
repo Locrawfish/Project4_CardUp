@@ -267,11 +267,20 @@ label > input:focus, label > select:focus {
 }
 
 #new_contact{
-  background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, 1);
   color:black;
   border-radius: 15px;
   }
 
 #new_contact form label{
   color:black;
+  font-size:14px;
+}
+.error {
+  border-color: #FF9966;
+  color: #FF9966;
+}
+.valid{
+  color:#70DBDB;
+  border-color:#70DBDB;
 }
