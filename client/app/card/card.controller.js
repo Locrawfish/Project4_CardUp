@@ -11,6 +11,7 @@ angular
 
 
     var that = this;
+    var user = Auth.getCurrentUser();
 
     CardService.getAllCards().then(function(res){
       that.inventory = res.data;
@@ -25,6 +26,11 @@ angular
       });
     };
 
+    that.editCard = function(card, res) {
+      console.log(JSON.stringify(card));
+      $state.go('card-edit', { id: card._id });
+    };
+
     that.addMyCard = function(card) {
       console.log("createCard: ", card);
       CardService.addMyCard(card);
@@ -37,7 +43,7 @@ angular
         }
       }
 
-    var user = Auth.getCurrentUser();
+
 
     that.addCard = function(card) {
       // REMOVE THIS WITH REAL DATA, THIS IS A BAD IDEA
@@ -50,6 +56,5 @@ angular
     };
     that.go = function ( path ) {
       $location.path( path );
-};
-
-};
+    };
+}

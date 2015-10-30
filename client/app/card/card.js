@@ -21,9 +21,9 @@ angular
         controllerAs: 'ctrl'
       })
       .state('card-edit', {
-        url: '/cards/edit',
+        url: '/cards/:id/edit',
         templateUrl: 'app/card/edit.html',
-        controller: 'CardIndexController',
+        controller: 'CardEditController',
         controllerAs: 'ctrl'
       })
       .state('card-mycards', {
