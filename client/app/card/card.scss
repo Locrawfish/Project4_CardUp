@@ -7,6 +7,7 @@ h2 {
   text-align: center;
   margin-left: 2%;
   margin-bottom: 25px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 h4 {
   text-shadow: 2px 2px white;
@@ -286,4 +287,21 @@ label > input:focus, label > select:focus {
   opacity: 1;
 }
 
+#new_contact{
+  background-color: rgba(255, 255, 255, 1);
+  color:black;
+  border-radius: 15px;
+  }
 
+#new_contact form label{
+  color:black;
+  font-size:14px;
+}
+.error {
+  border-color: #FF9966;
+  color: #FF9966;
+}
+.valid{
+  color:#70DBDB;
+  border-color:#70DBDB;
+}
