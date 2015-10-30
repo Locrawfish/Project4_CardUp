@@ -21,7 +21,6 @@ angular
     that.createCard = function(card, res) {
       console.log("createCard: ", card);
       CardService.createCard(card);
-      // res.redirect('/cards');
     };
 
     that.addMyCard = function(card) {

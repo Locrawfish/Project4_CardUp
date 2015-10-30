@@ -11,7 +11,7 @@
 
     <article class="search ">
       <form  role="search">
-        <div class="form-group col-lg-10"><input type="text" class="form-control" name="search" ng-model="ctrl.searchText" placeholder="search for contacts here!"></div>
+        <div class="form-group col-lg-10 col-md-4 col-sm-s"><input type="text" class="form-control" name="search" ng-model="ctrl.searchText" placeholder="search for contacts here!"></div>
         <button type="clear"  class="btn btn-warning col-lg-1" ng-click="ctrl.searchText = ''">Reset</button>
       </form>
 
@@ -44,7 +44,7 @@
   <form method="link" action="cards" class="btn-danger">
   <button class="btn btn-sm btn-danger" ng-click="ctrl.removeCard(card)">Remove Contact</button>
   </form>
-  <form method="link" action="cards/edit" class="col-lg-3">
+  <form method="link" action="cards/edit" class="btn-edit">
   <button class="btn btn-sm btn-info" ng-click="ctrl.editCard(card)">Edit Contact</button>
   </form>
 

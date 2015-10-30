@@ -151,6 +151,43 @@ body {
     font-size: 18px;
 }
 
+// LOGIN/SIGNUP FORM BOX
+.container form {
+  background-color: white;
+}
+.container form input {
+  margin-left: 25px;
+  border: gray solid 1px;
+}
+
+.btn-primary {
+  background-color: #0099CC;
+  margin-left: 25px;
+  margin-top: 30px;
+}
+.btn-login {
+  background-color:  #FF9966;
+  margin-left: 25px;
+  margin-top: 30px;
+}
+.btn-register {
+  background-color:  #C9C9C9;
+  margin-left: 13px;
+  margin-top: 30px;
+}
+.btn-twitter {
+  margin-left: 100px;
+}
+
+.col-sm-12 h1 {
+  margin-left: 38%;
+}
+
+form > div > label {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
 
 // SCAFFOLED SCSS
 // .thing-form {
