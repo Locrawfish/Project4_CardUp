@@ -6,9 +6,10 @@
     .service('CardService', CardService);
 
 /** @ngInject */
-    function CardService($http) {
+    function CardService($http, $stateParams) {
 
       var self = this;
+      var cardId = $stateParams.id;
 
       self.getAllCards = function() {
         return $http.get('/api/cards');
@@ -20,8 +21,9 @@
         // res.redirect('/cards');
       };
 
+
       self.editCard = function(card) {
-        return $http.put('/api/cards/_id/edit', card);
+        return $http.put('/api/cards/'+ card._id, card);
       };
 
       self.addMyCard = function(card) {

@@ -9,7 +9,6 @@ angular
 
   function CardIndexController(CardService, $state, ContactService, Auth, $location) {
 
-
     var that = this;
     var user = Auth.getCurrentUser();
 
@@ -42,8 +41,6 @@ angular
       that.uploader.flow.upload();
         }
       }
-
-
 
     that.addCard = function(card) {
       // REMOVE THIS WITH REAL DATA, THIS IS A BAD IDEA
