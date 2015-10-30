@@ -2,7 +2,11 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <section class="container-fluid main">
   <div class="row">
-    <h1>Your Contacts</h1>
+
+    <h1 class = "col-lg-5">Your Contacts</h1>
+    <form method="link" action="cards/new" class = 'add_contact col-lg-2'>
+        <button type="button" class = "btn btn-info">Add new card</button>
+      </form>
     <article class="search ">
       <form  role="search">
         <div class="form-group col-lg-10"><input type="text" class="form-control" name="search" ng-model="ctrl.searchText" placeholder="search for contacts here!"></div>
@@ -10,9 +14,8 @@
         <button type="clear"  class="btn btn-warning col-lg-1" ng-click="ctrl.searchText = ''">Reset</button>
       </form>
 
-<!-- <form href='card/new'>
-    <input type="submit" value="Create a new card">
-</form> -->
+
+
 
 
 <!-- <div class="list-group">
