@@ -20,6 +20,12 @@ angular
         controller: 'CardIndexController',
         controllerAs: 'ctrl'
       })
+      .state('card-edit', {
+        url: '/cards/edit',
+        templateUrl: 'app/card/edit.html',
+        controller: 'CardIndexController',
+        controllerAs: 'ctrl'
+      })
       .state('card-mycards', {
         url: '/cards/mycards',
         templateUrl: 'app/card/mycards.html',
