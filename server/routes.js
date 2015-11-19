@@ -7,7 +7,7 @@
 var errors = require('./components/errors');
 var express = require('express');
 var router = express.Router();
-var serveStatic = require('serve-static')
+// var serveStatic = require('serve-static')
 
 var authenticate = function(req, res, next, currentUser) {
   if(!req.isAuthenticated()) {
@@ -26,7 +26,7 @@ module.exports = function(app) {
   app.use('/api/users', require('./api/user'));
 
   app.use('/auth', require('./auth'));
-  app.use(express.static(path.join(images, '../../static')));
+  // app.use(express.static(path.join(images, '../../static')));
 
   // ---------------- INDEX | CARDS
 router.get('/', authenticate, function(req, res, next) {
